@@ -60,6 +60,9 @@ class Journal(object):
         self.unavailable_reminder_period = 4  # weeks
         self.invite_assignment_reminder_period = 1  # week
 
+        # Not sure yet where the settings would need to be modified
+        self.reviewers_cda = self.settings.get('reviewers_can_decline_assignments', False)
+
     def __get_group_id(self, name, number=None):
         if number:
             return f'{self.venue_id}/{self.submission_group_name}{number}/{name}'
