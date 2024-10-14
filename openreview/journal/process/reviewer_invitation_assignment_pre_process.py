@@ -36,7 +36,8 @@ def process(client, edge, invitation):
 
             ## - Check if the user is an official reviewer
             if user_profile.id.startswith('~') and client.get_groups(id=reviewers_id, member=user_profile.id):
-                raise openreview.OpenReviewException(f'Reviewer {user_profile.get_preferred_name(pretty=True)} is an official reviewer, please use the "Assign" button to make the assignment.')
+                if not journal.reviewers_cda:  # If reviewers can decline then it is not an error
+                    raise openreview.OpenReviewException(f'Reviewer {user_profile.get_preferred_name(pretty=True)} is an official reviewer, please use the "Assign" button to make the assignment.')
 
         else:
             if user.startswith('~'):

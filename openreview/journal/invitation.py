@@ -2272,7 +2272,7 @@ If you have questions please contact the Editors-In-Chief: {self.journal.get_edi
                     'param': {
                         'type': 'profile',
                         'notInGroup': self.journal.get_reviewers_id()
-                    }
+                    } if not self.reviewers_cda else {}
                 },
                 'weight': {
                     'param': {
