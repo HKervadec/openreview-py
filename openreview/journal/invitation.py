@@ -2271,8 +2271,7 @@ If you have questions please contact the Editors-In-Chief: {self.journal.get_edi
                 'tail': {
                     'param': {
                         'type': 'profile',
-                        'notInGroup': self.journal.get_reviewers_id()
-                    } if not self.reviewers_cda else {}
+                    } | ({'notInGroup': self.journal.get_reviewers_id()} if not self.reviewers_cda else {})
                 },
                 'weight': {
                     'param': {
