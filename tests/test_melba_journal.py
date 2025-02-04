@@ -103,7 +103,8 @@ class TestJournal():
                                     },
                                     'readers': ['MELBA', 'MELBA/Paper${7/content/noteNumber/value}/Action_Editors', '${5/signatures}']
                                 }                             
-                            }
+                            },
+                            'reviewers_can_decline_assignments': True
                         }
                     }
                 }
